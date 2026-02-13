@@ -9,9 +9,6 @@ on:
     branches: [main]
   workflow_dispatch:
 
-env:
-  DEVELOPER_DIR: /Applications/Xcode_15.0.app/Contents/Developer
-
 jobs:
   build:
     name: Build macOS App
@@ -21,8 +18,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Get Xcode version
+        id: xcode-version
+        run: |
+          XCODE_PATH=$(ls /Applications/ | grep -E "Xcode" | head -1)
+          if [ -z "$XCODE_PATH" ]; then
+            XCODE_PATH="Xcode.app"
+          fi
+          echo "xcode_path=/Applications/$XCODE_PATH/Contents/Developer" >> $GITHUB_OUTPUT
+          echo "Using Xcode at: /Applications/$XCODE_PATH"
+
       - name: Select Xcode
-        run: sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+        run: sudo xcode-select -s ${{ steps.xcode-version.outputs.xcode_path }}
 
       - name: Show Xcode version
         run: xcodebuild -version
@@ -66,8 +73,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Get Xcode version
+        id: xcode-version
+        run: |
+          XCODE_PATH=$(ls /Applications/ | grep -E "Xcode" | head -1)
+          if [ -z "$XCODE_PATH" ]; then
+            XCODE_PATH="Xcode.app"
+          fi
+          echo "xcode_path=/Applications/$XCODE_PATH/Contents/Developer" >> $GITHUB_OUTPUT
+
       - name: Select Xcode
-        run: sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+        run: sudo xcode-select -s ${{ steps.xcode-version.outputs.xcode_path }}
 
       - name: Install XcodeGen
         run: brew install xcodegen
@@ -93,8 +109,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Get Xcode version
+        id: xcode-version
+        run: |
+          XCODE_PATH=$(ls /Applications/ | grep -E "Xcode" | head -1)
+          if [ -z "$XCODE_PATH" ]; then
+            XCODE_PATH="Xcode.app"
+          fi
+          echo "xcode_path=/Applications/$XCODE_PATH/Contents/Developer" >> $GITHUB_OUTPUT
+
       - name: Select Xcode
-        run: sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+        run: sudo xcode-select -s ${{ steps.xcode-version.outputs.xcode_path }}
 
       - name: Install XcodeGen
         run: brew install xcodegen
