@@ -189,7 +189,7 @@ struct AddEditorView: View {
                         }
                     }
                     .onChange(of: selectedType) { _, newType in
-                        extensionsPath = newType.defaultExtensionsPath
+                        extensionsPath = newType.defaultExtensionsPath ?? ""
                         if name.isEmpty {
                             name = newType.rawValue
                         }
@@ -233,7 +233,7 @@ struct AddEditorView: View {
                     let editor = Editor(
                         type: selectedType,
                         name: name.isEmpty ? selectedType.rawValue : name,
-                        extensionsPath: extensionsPath.isEmpty ? selectedType.defaultExtensionsPath : extensionsPath,
+                        extensionsPath: extensionsPath.isEmpty ? (selectedType.defaultExtensionsPath ?? "") : extensionsPath,
                         isEnabled: isEnabled
                     )
                     appState.addEditor(editor)
@@ -246,7 +246,7 @@ struct AddEditorView: View {
         }
         .frame(width: 500, height: 400)
         .onAppear {
-            extensionsPath = selectedType.defaultExtensionsPath
+            extensionsPath = selectedType.defaultExtensionsPath ?? ""
             if name.isEmpty {
                 name = selectedType.rawValue
             }

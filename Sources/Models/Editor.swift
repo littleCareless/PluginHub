@@ -11,7 +11,8 @@ enum EditorType: String, Codable, CaseIterable {
     case trae = "Trae"
     case marsCode = "MarsCode"
 
-    var defaultExtensionsPath: String {
+    /// 获取默认扩展路径（可能返回 nil 如果首选路径不存在）
+    var defaultExtensionsPath: String? {
         switch self {
         case .vscode:
             return "~/.vscode/extensions"
@@ -20,13 +21,47 @@ enum EditorType: String, Codable, CaseIterable {
         case .vscodium:
             return "~/.vscode-oss/extensions"
         case .cursor:
-            return "~/Library/Application Support/Cursor/extensions"
+            // Cursor 可能有多个安装位置
+            let path1 = "~/Library/Application Support/Cursor/extensions"
+            let path2 = "~/.cursor/extensions"
+            // 返回第一个存在的路径
+            if FileManager.default.fileExists(atPath: NSString(string: path1).expandingTildeInPath) {
+                return path1
+            } else if FileManager.default.fileExists(atPath: NSString(string: path2).expandingTildeInPath) {
+                return path2
+            }
+            // 默认返回第一个
+            return path1
         case .windsurf:
             return "~/Library/Application Support/Windsurf/extensions"
         case .trae:
             return "~/Library/Application Support/Trae/extensions"
         case .marsCode:
             return "~/Library/Application Support/MarsCode/extensions"
+        }
+    }
+
+    /// 获取所有可能的扩展目录路径（用于扫描）
+    var allPossibleExtensionsPaths: [String] {
+        switch self {
+        case .vscode:
+            return ["~/.vscode/extensions"]
+        case .vscodeInsiders:
+            return ["~/.vscode-insiders/extensions"]
+        case .vscodium:
+            return ["~/.vscode-oss/extensions"]
+        case .cursor:
+            // Cursor 可能有多个插件目录
+            return [
+                "~/Library/Application Support/Cursor/extensions",
+                "~/.cursor/extensions"
+            ]
+        case .windsurf:
+            return ["~/Library/Application Support/Windsurf/extensions"]
+        case .trae:
+            return ["~/Library/Application Support/Trae/extensions"]
+        case .marsCode:
+            return ["~/Library/Application Support/MarsCode/extensions"]
         }
     }
 
@@ -83,7 +118,7 @@ struct Editor: Identifiable, Codable, Hashable {
         self.id = id
         self.type = type
         self.name = name ?? type.rawValue
-        self.extensionsPath = extensionsPath ?? type.defaultExtensionsPath
+        self.extensionsPath = extensionsPath ?? (type.defaultExtensionsPath ?? "")
         self.isEnabled = isEnabled
         self.lastScanDate = lastScanDate
     }

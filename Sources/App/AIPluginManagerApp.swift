@@ -314,13 +314,15 @@ enum EditorDiscoveryService {
                 return true
             }
         }
-        
-        // 2. 检查插件目录是否存在
-        let expandedPath = NSString(string: type.defaultExtensionsPath).expandingTildeInPath
-        if FileManager.default.fileExists(atPath: expandedPath) {
-            return true
+
+        // 2. 检查插件目录是否存在（检查所有可能的路径）
+        for path in type.allPossibleExtensionsPaths {
+            let expandedPath = NSString(string: path).expandingTildeInPath
+            if FileManager.default.fileExists(atPath: expandedPath) {
+                return true
+            }
         }
-        
+
         // 3. 检查应用支持目录
         let appSupportBase = NSString(string: "~/Library/Application Support").expandingTildeInPath
         let editorName: String
