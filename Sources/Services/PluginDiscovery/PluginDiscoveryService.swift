@@ -12,25 +12,58 @@ final class PluginDiscoveryService: ObservableObject {
 
     private init() {}
 
-    /// 发现编辑器插件
+    /// 发现编辑器插件（联合扫描多个目录）
     func discoverPlugins(in editor: Editor) async throws -> [Plugin] {
         guard editor.isEnabled else { return [] }
-        guard editor.extensionsDirectoryExists else {
+
+        // 获取所有可能的扩展目录
+        let allPaths = editor.allExtensionsPaths
+
+        guard !allPaths.isEmpty else {
             throw PluginDiscoveryError.directoryNotFound(editor.expandedPath)
         }
 
         var plugins: [Plugin] = []
+        var seenPluginIds = Set<String>()  // 用于去重
 
-        let contents = try fileManager.contentsOfDirectory(
-            at: URL(fileURLWithPath: editor.expandedPath),
-            includingPropertiesForKeys: [.isDirectoryKey, .contentModificationDateKey],
-            options: [.skipsHiddenFiles]
-        )
+        // 扫描所有扩展目录
+        for extensionPath in allPaths {
+            let directoryPlugins = scanDirectory(extensionPath, editor: editor)
 
-        for case let extensionFolder as URL in contents {
-            if let plugin = parseExtensionFolder(extensionFolder, editor: editor) {
-                plugins.append(plugin)
+            for plugin in directoryPlugins {
+                // 根据插件 ID 去重，保留第一个找到的（优先级更高的）
+                if !seenPluginIds.contains(plugin.extensionId) {
+                    seenPluginIds.insert(plugin.extensionId)
+                    plugins.append(plugin)
+                }
             }
+        }
+
+        return plugins
+    }
+
+    /// 扫描单个目录
+    private func scanDirectory(_ path: String, editor: Editor) -> [Plugin] {
+        var plugins: [Plugin] = []
+
+        guard fileManager.fileExists(atPath: path) else {
+            return plugins
+        }
+
+        do {
+            let contents = try fileManager.contentsOfDirectory(
+                at: URL(fileURLWithPath: path),
+                includingPropertiesForKeys: [.isDirectoryKey, .contentModificationDateKey],
+                options: [.skipsHiddenFiles]
+            )
+
+            for case let extensionFolder as URL in contents {
+                if let plugin = parseExtensionFolder(extensionFolder, editor: editor) {
+                    plugins.append(plugin)
+                }
+            }
+        } catch {
+            print("Failed to scan directory \(path): \(error.localizedDescription)")
         }
 
         return plugins

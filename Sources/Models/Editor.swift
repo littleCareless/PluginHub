@@ -133,6 +133,28 @@ struct Editor: Identifiable, Codable, Hashable {
         FileManager.default.fileExists(atPath: expandedPath)
     }
 
+    /// 获取所有可能的扩展目录路径（用于联合扫描）
+    /// 包含用户自定义路径和系统默认的所有可能路径
+    var allExtensionsPaths: [String] {
+        var paths = Set<String>()
+
+        // 添加用户配置的路径
+        let expandedUserPath = expandedPath
+        if !expandedUserPath.isEmpty {
+            paths.insert(expandedUserPath)
+        }
+
+        // 添加该编辑器类型的所有默认可能路径
+        for path in type.allPossibleExtensionsPaths {
+            let expanded = NSString(string: path).expandingTildeInPath
+            if !expanded.isEmpty && !paths.contains(expanded) {
+                paths.insert(expanded)
+            }
+        }
+
+        return Array(paths).filter { FileManager.default.fileExists(atPath: $0) }
+    }
+
     /// 获取应用程序图标
     var appIcon: NSImage? {
         for path in type.applicationPaths {
