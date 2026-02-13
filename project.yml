@@ -1,6 +1,6 @@
-name: AIPluginManager
+name: PluginHub
 options:
-  bundleIdPrefix: com.zhangning
+  bundleIdPrefix: com.pluginhub
   deploymentTarget:
     macOS: "14.0"
   xcodeVersion: "15.0"
@@ -18,7 +18,7 @@ settings:
     CFBundleAllowMixedLocalizations: YES
 
 targets:
-  AIPluginManager:
+  PluginHub:
     type: application
     platform: macOS
     sources:
@@ -31,8 +31,8 @@ targets:
       - path: Resources/zh-Hans.lproj/Localizable.strings
     settings:
       base:
-        PRODUCT_NAME: AIPluginManager
-        PRODUCT_BUNDLE_IDENTIFIER: com.zhangning.AIPluginManager
+        PRODUCT_NAME: PluginHub
+        PRODUCT_BUNDLE_IDENTIFIER: com.pluginhub.macos
         INFOPLIST_FILE: Resources/Info.plist
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         DEVELOPMENT_TEAM: ""
@@ -41,33 +41,33 @@ targets:
     dependencies: []
     postCompileScripts: []
 
-  AIPluginManagerTests:
+  PluginHubTests:
     type: bundle.unit-test
     platform: macOS
     sources:
       - path: Tests
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.zhangning.AIPluginManagerTests
-        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/AIPluginManager.app/Contents/MacOS/AIPluginManager"
+        PRODUCT_BUNDLE_IDENTIFIER: com.pluginhub.macos.tests
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/PluginHub.app/Contents/MacOS/PluginHub"
         BUNDLE_LOADER: "$(TEST_HOST)"
         GENERATE_INFOPLIST_FILE: YES
         INFOPLIST_KEY_NSPrincipalClass: ""
     dependencies:
-      - target: AIPluginManager
+      - target: PluginHub
 
 schemes:
-  AIPluginManager:
+  PluginHub:
     build:
       targets:
-        AIPluginManager: all
-        AIPluginManagerTests: [test]
+        PluginHub: all
+        PluginHubTests: [test]
     run:
       config: Debug
     test:
       config: Debug
       targets:
-        - AIPluginManagerTests
+        - PluginHubTests
     profile:
       config: Release
     analyze:

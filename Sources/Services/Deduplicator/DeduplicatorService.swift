@@ -8,8 +8,11 @@ final class DeduplicatorService: ObservableObject {
     @Published var currentReport: DuplicateReport?
 
     private let fileManager = FileManager.default
+    private let storeService: PluginStoreService
 
-    init() {}
+    init(storeService: PluginStoreService = .shared) {
+        self.storeService = storeService
+    }
 
     /// 分析重复插件
     func analyzeDuplicates(
@@ -157,19 +160,6 @@ final class DeduplicatorService: ObservableObject {
             }
         }
 
-        // 2. 删除重复
-        for group in report.groups {
-            // 删除较小的重复副本
-            let sortedInstances = group.instances.sorted { $0.size > $1.size }
-            for instance in sortedInstances.dropFirst() {
-                actions.append(.remove(
-                    pluginUniqueId: group.pluginUniqueId,
-                    path: instance.path,
-                    editorName: instance.editorName
-                ))
-            }
-        }
-
         return OptimizationPlan(
             actions: actions,
             estimatedSpaceSaved: report.wastedSpace,
@@ -179,6 +169,12 @@ final class DeduplicatorService: ObservableObject {
 
     /// 执行优化计划
     func executePlan(_ plan: OptimizationPlan, progress: @escaping (Double) -> Void) async throws {
+        if plan.actions.isEmpty {
+            progress(1.0)
+            _ = try? storeService.garbageCollectStore()
+            return
+        }
+
         var completed = 0
         let total = Double(plan.actions.count)
 
@@ -198,16 +194,13 @@ final class DeduplicatorService: ObservableObject {
             completed += 1
             progress(Double(completed) / total)
         }
+
+        // 优化完成后尝试回收未引用对象
+        _ = try? storeService.garbageCollectStore()
     }
 
     private func performLink(sourcePath: String, targetPath: String) async throws {
-        // 移除现有目标
-        if fileManager.fileExists(atPath: targetPath) {
-            try fileManager.removeItem(atPath: targetPath)
-        }
-
-        // 创建符号链接
-        try fileManager.createSymbolicLink(atPath: targetPath, withDestinationPath: sourcePath)
+        try await storeService.linkStoreContent(from: sourcePath, to: targetPath)
     }
 
     private func folderSize(at path: String) throws -> Int64 {

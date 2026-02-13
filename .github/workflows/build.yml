@@ -42,16 +42,16 @@ jobs:
 
       - name: Build Debug
         run: |
-          xcodebuild -project AIPluginManager.xcodeproj \
-            -scheme AIPluginManager \
+          xcodebuild -project PluginHub.xcodeproj \
+            -scheme PluginHub \
             -configuration Debug \
             -derivedDataPath ./build \
             build
 
       - name: Build Release
         run: |
-          xcodebuild -project AIPluginManager.xcodeproj \
-            -scheme AIPluginManager \
+          xcodebuild -project PluginHub.xcodeproj \
+            -scheme PluginHub \
             -configuration Release \
             -derivedDataPath ./build \
             build
@@ -59,10 +59,10 @@ jobs:
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: AIPluginManager-macOS
+          name: PluginHub-macOS
           path: |
-            build/Build/Products/Release/AIPluginManager.app
-            build/Build/Products/Release/AIPluginManager.app.dSYM
+            build/Build/Products/Release/PluginHub.app
+            build/Build/Products/Release/PluginHub.app.dSYM
           retention-days: 30
 
   test:
@@ -93,8 +93,8 @@ jobs:
 
       - name: Run Tests
         run: |
-          xcodebuild -project AIPluginManager.xcodeproj \
-            -scheme AIPluginManager \
+          xcodebuild -project PluginHub.xcodeproj \
+            -scheme PluginHub \
             -configuration Debug \
             -derivedDataPath ./build \
             test
@@ -129,8 +129,8 @@ jobs:
 
       - name: Build Release
         run: |
-          xcodebuild -project AIPluginManager.xcodeproj \
-            -scheme AIPluginManager \
+          xcodebuild -project PluginHub.xcodeproj \
+            -scheme PluginHub \
             -configuration Release \
             -derivedDataPath ./build \
             build
@@ -140,20 +140,20 @@ jobs:
           # Create DMG using create-dmg
           brew install create-dmg
           create-dmg \
-            --volname "AIPluginManager" \
+            --volname "PluginHub" \
             --window-pos 200 120 \
             --window-size 600 400 \
             --icon-size 100 \
-            --icon "AIPluginManager.app" 150 185 \
-            --hide-extension "AIPluginManager.app" \
+            --icon "PluginHub.app" 150 185 \
+            --hide-extension "PluginHub.app" \
             --app-drop-link 450 185 \
-            "AIPluginManager-${GITHUB_REF#refs/tags/}.dmg" \
-            "build/Build/Products/Release/AIPluginManager.app"
+            "PluginHub-${GITHUB_REF#refs/tags/}.dmg" \
+            "build/Build/Products/Release/PluginHub.app"
 
       - name: Upload Release Asset
         uses: softprops/action-gh-release@v1
         with:
-          files: AIPluginManager-*.dmg
+          files: PluginHub-*.dmg
           draft: false
           prerelease: ${{ contains(github.ref, 'alpha') || contains(github.ref, 'beta') }}
           generate_release_notes: true

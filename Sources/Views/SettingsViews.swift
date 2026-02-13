@@ -394,6 +394,7 @@ struct StorageSettingsView: View {
 // MARK: - Advanced Settings
 
 struct AdvancedSettingsView: View {
+    @StateObject private var storeService = PluginStoreService.shared
     @AppStorage("enableSymlinks") private var enableSymlinks = true
     @AppStorage("autoLinkOnScan") private var autoLinkOnScan = false
     @AppStorage("showHiddenFiles") private var showHiddenFiles = false
@@ -421,7 +422,7 @@ struct AdvancedSettingsView: View {
                 }
 
                 Button("settings.clearCache".localized) {
-                    // 清除缓存
+                    _ = try? storeService.garbageCollectStore()
                 }
             }
         }

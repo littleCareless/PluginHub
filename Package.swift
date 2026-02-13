@@ -2,23 +2,23 @@
 import PackageDescription
 
 let package = Package(
-    name: "AIPluginManager",
+    name: "PluginHub",
     platforms: [
         .macOS(.v14)
     ],
     products: [
         .executable(
-            name: "AIPluginManager",
-            targets: ["AIPluginManager"]
+            name: "PluginHub",
+            targets: ["PluginHub"]
         ),
         .library(
-            name: "AIPluginManagerCore",
-            targets: ["AIPluginManager"]
+            name: "PluginHubCore",
+            targets: ["PluginHub"]
         )
     ],
     targets: [
         .executableTarget(
-            name: "AIPluginManager",
+            name: "PluginHub",
             dependencies: [],
             path: "Sources/App",
             resources: [
@@ -26,8 +26,8 @@ let package = Package(
             ]
         ),
         .testTarget(
-            name: "AIPluginManagerTests",
-            dependencies: ["AIPluginManager"],
+            name: "PluginHubTests",
+            dependencies: ["PluginHub"],
             path: "Tests"
         )
     ]

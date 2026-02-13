@@ -1,19 +1,19 @@
-# AI Plugin Manager
+# PluginHub
 
 <p align="center">
-  <img src="https://img.shields.io/github/release/littleCareless/AIPluginManager" />
-  <img src="https://img.shields.io/github/license/littleCareless/AIPluginManager" />
-  <img src="https://img.shields.io/github/stars/littleCareless/AIPluginManager" />
-  <img src="https://img.shields.io/github/forks/littleCareless/AIPluginManager" />
+  <img src="https://img.shields.io/github/release/littleCareless/PluginHub" />
+  <img src="https://img.shields.io/github/license/littleCareless/PluginHub" />
+  <img src="https://img.shields.io/github/stars/littleCareless/PluginHub" />
+  <img src="https://img.shields.io/github/forks/littleCareless/PluginHub" />
 </p>
 
-> 统一管理你的 AI 编程助手插件，告别重复安装与存储浪费
+> 统一管理你的 VS Code 系编辑器插件，告别重复安装与存储浪费
 
 ## 为什么需要这个工具？
 
-在 AI 辅助编程时代，越来越多的开发者同时使用多个 AI 编辑器：
+在现代开发中，越来越多的开发者同时使用多个 VS Code 系编辑器：
 - **Cursor** - AI 原生代码编辑器
-- **VS Code + Copilot** - 微软官方 AI 助手
+- **VS Code** - 微软官方代码编辑器
 - **Windsurf**、**Trae** 等新兴工具...
 
 每个编辑器都维护自己的插件目录，导致：
@@ -25,7 +25,7 @@
 | 📦 版本混乱 | 不同编辑器可能安装了不同版本，难以统一管理 |
 | 🛠️ 同步困难 | 新装一个编辑器，需要重新安装所有插件 |
 
-**AI Plugin Manager 就是来解决这个问题的**——类似 Node.js 的 pnpm，通过符号链接实现插件共享，一处安装，处处可用。
+**PluginHub 就是来解决这个问题的**——类似 Node.js 的 pnpm，通过符号链接实现插件共享，一处安装，处处可用。
 
 ## 特性
 
@@ -60,7 +60,7 @@
 
 ## 使用场景
 
-| 场景 | 传统方式 | AI Plugin Manager |
+| 场景 | 传统方式 | PluginHub |
 |------|----------|-------------------|
 | 新装 Cursor，想用已有的 Copilot | 重新下载安装 | 一键链接，秒级完成 |
 | 5 个编辑器都装了 Cline | 占用 5 × 200MB = 1GB | 只需 200MB |
@@ -97,8 +97,8 @@
 
 ```bash
 # 1. 克隆项目
-git clone https://github.com/littleCareless/AIPluginManager.git
-cd AIPluginManager
+git clone https://github.com/littleCareless/PluginHub.git
+cd PluginHub
 
 # 2. 安装 XcodeGen（如果没有）
 brew install xcodegen
@@ -107,15 +107,15 @@ brew install xcodegen
 xcodegen generate
 
 # 4. 编译（Debug 版本）
-xcodebuild -project AIPluginManager.xcodeproj -scheme AIPluginManager -configuration Debug build
+xcodebuild -project PluginHub.xcodeproj -scheme PluginHub -configuration Debug build
 
 # 5. 编译（Release 版本）
-xcodebuild -project AIPluginManager.xcodeproj -scheme AIPluginManager -configuration Release build
+xcodebuild -project PluginHub.xcodeproj -scheme PluginHub -configuration Release build
 
 # 6. 运行应用
-open build/DerivedData/Build/Products/Debug/AIPluginManager.app
+open build/DerivedData/Build/Products/Debug/PluginHub.app
 # 或
-open build/DerivedData/Build/Products/Release/AIPluginManager.app
+open build/DerivedData/Build/Products/Release/PluginHub.app
 ```
 
 ### 方法三：使用 xcodegen 直接运行
@@ -123,13 +123,13 @@ open build/DerivedData/Build/Products/Release/AIPluginManager.app
 ```bash
 # 安装依赖并生成项目后，可以用 open 直接打开
 xcodegen generate
-open AIPluginManager.xcodeproj
+open PluginHub.xcodeproj
 # 在 Xcode 中按 Cmd+R 运行
 ```
 
 ## 快速开始
 
-1. **启动应用** - 打开 AI Plugin Manager
+1. **启动应用** - 打开 PluginHub
 2. **扫描编辑器** - 点击侧边栏的"扫描"按钮，自动发现已安装的 AI 编辑器
 3. **查看插件** - 在"插件"页面查看所有已安装的插件
 4. **检测重复** - 点击"重复检测"分析插件重复情况
@@ -138,10 +138,10 @@ open AIPluginManager.xcodeproj
 ## 项目结构
 
 ```
-AIPluginManager/
+PluginHub/
 ├── Sources/
 │   ├── App/
-│   │   ├── AIPluginManagerApp.swift    # 应用入口
+│   │   ├── PluginHubApp.swift          # 应用入口
 │   │   └── Localization.swift          # 本地化支持
 │   ├── Models/
 │   │   ├── Plugin.swift                # 插件模型
@@ -163,7 +163,7 @@ AIPluginManager/
 │   ├── en.lproj/                       # 英文本地化
 │   └── zh-Hans.lproj/                  # 简体中文本地化
 ├── Tests/
-│   └── AIPluginManagerTests.swift      # 单元测试
+│   └── PluginHubTests.swift           # 单元测试
 └── project.yml                          # XcodeGen 配置
 ```
 
@@ -236,8 +236,8 @@ A: 目前主要支持标准的 VS Code 插件目录结构。如果你的编辑�
 
 ```bash
 # 1. 克隆你的 fork
-git clone https://github.com/YOUR_USERNAME/AIPluginManager.git
-cd AIPluginManager
+git clone https://github.com/YOUR_USERNAME/PluginHub.git
+cd PluginHub
 
 # 2. 安装 XcodeGen
 brew install xcodegen
@@ -246,7 +246,7 @@ brew install xcodegen
 xcodegen generate
 
 # 4. 在 Xcode 中打开
-open AIPluginManager.xcodeproj
+open PluginHub.xcodeproj
 ```
 
 ### 代码规范
@@ -257,7 +257,7 @@ open AIPluginManager.xcodeproj
 
 ## 更新日志
 
-查看 [Releases](https://github.com/littleCareless/AIPluginManager/releases) 了解版本历史。
+查看 [Releases](https://github.com/littleCareless/PluginHub/releases) 了解版本历史。
 
 ## 许可证
 
@@ -270,7 +270,7 @@ open AIPluginManager.xcodeproj
 
 ## 联系方式
 
-- GitHub Issues: https://github.com/littleCareless/AIPluginManager/issues
+- GitHub Issues: https://github.com/littleCareless/PluginHub/issues
 - 作者: littleCareless
 
 ---

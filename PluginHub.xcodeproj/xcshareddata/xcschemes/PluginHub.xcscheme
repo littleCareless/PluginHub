@@ -15,10 +15,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E30CD88A887CBED1088C4EC3"
-               BuildableName = "AIPluginManager.app"
-               BlueprintName = "AIPluginManager"
-               ReferencedContainer = "container:AIPluginManager.xcodeproj">
+               BlueprintIdentifier = "E42B3EB71D7148070E2BB67B"
+               BuildableName = "PluginHub.app"
+               BlueprintName = "PluginHub"
+               ReferencedContainer = "container:PluginHub.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,10 +29,10 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B0AF45F1335136AB57D9FDC1"
-               BuildableName = "AIPluginManagerTests.xctest"
-               BlueprintName = "AIPluginManagerTests"
-               ReferencedContainer = "container:AIPluginManager.xcodeproj">
+               BlueprintIdentifier = "8898BA93509140E5D5C4763B"
+               BuildableName = "PluginHubTests.xctest"
+               BlueprintName = "PluginHubTests"
+               ReferencedContainer = "container:PluginHub.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,10 +46,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E30CD88A887CBED1088C4EC3"
-            BuildableName = "AIPluginManager.app"
-            BlueprintName = "AIPluginManager"
-            ReferencedContainer = "container:AIPluginManager.xcodeproj">
+            BlueprintIdentifier = "E42B3EB71D7148070E2BB67B"
+            BuildableName = "PluginHub.app"
+            BlueprintName = "PluginHub"
+            ReferencedContainer = "container:PluginHub.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
@@ -58,10 +58,10 @@
             parallelizable = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B0AF45F1335136AB57D9FDC1"
-               BuildableName = "AIPluginManagerTests.xctest"
-               BlueprintName = "AIPluginManagerTests"
-               ReferencedContainer = "container:AIPluginManager.xcodeproj">
+               BlueprintIdentifier = "8898BA93509140E5D5C4763B"
+               BuildableName = "PluginHubTests.xctest"
+               BlueprintName = "PluginHubTests"
+               ReferencedContainer = "container:PluginHub.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -82,10 +82,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E30CD88A887CBED1088C4EC3"
-            BuildableName = "AIPluginManager.app"
-            BlueprintName = "AIPluginManager"
-            ReferencedContainer = "container:AIPluginManager.xcodeproj">
+            BlueprintIdentifier = "E42B3EB71D7148070E2BB67B"
+            BuildableName = "PluginHub.app"
+            BlueprintName = "PluginHub"
+            ReferencedContainer = "container:PluginHub.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
@@ -101,10 +101,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E30CD88A887CBED1088C4EC3"
-            BuildableName = "AIPluginManager.app"
-            BlueprintName = "AIPluginManager"
-            ReferencedContainer = "container:AIPluginManager.xcodeproj">
+            BlueprintIdentifier = "E42B3EB71D7148070E2BB67B"
+            BuildableName = "PluginHub.app"
+            BlueprintName = "PluginHub"
+            ReferencedContainer = "container:PluginHub.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
