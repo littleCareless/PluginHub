@@ -1,0 +1,164 @@
+name: Build & Release
+
+on:
+  push:
+    branches: [main]
+    tags:
+      - 'v*'
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  DEVELOPER_DIR: /Applications/Xcode_15.0.app/Contents/Developer
+
+jobs:
+  build:
+    name: Build macOS App
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+
+      - name: Show Xcode version
+        run: xcodebuild -version
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Generate Xcode Project
+        run: xcodegen generate
+
+      - name: Build Debug
+        run: |
+          xcodebuild -project AIPluginManager.xcodeproj \
+            -scheme AIPluginManager \
+            -configuration Debug \
+            -derivedDataPath ./build \
+            build
+
+      - name: Build Release
+        run: |
+          xcodebuild -project AIPluginManager.xcodeproj \
+            -scheme AIPluginManager \
+            -configuration Release \
+            -derivedDataPath ./build \
+            build
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: AIPluginManager-macOS
+          path: |
+            build/Build/Products/Release/AIPluginManager.app
+            build/Build/Products/Release/AIPluginManager.app.dSYM
+          retention-days: 30
+
+  test:
+    name: Unit Tests
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Generate Xcode Project
+        run: xcodegen generate
+
+      - name: Run Tests
+        run: |
+          xcodebuild -project AIPluginManager.xcodeproj \
+            -scheme AIPluginManager \
+            -configuration Debug \
+            -derivedDataPath ./build \
+            test
+
+  release:
+    name: Create Release
+    needs: build
+    runs-on: macos-latest
+    if: startsWith(github.ref, 'refs/tags/v')
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Generate Xcode Project
+        run: xcodegen generate
+
+      - name: Build Release
+        run: |
+          xcodebuild -project AIPluginManager.xcodeproj \
+            -scheme AIPluginManager \
+            -configuration Release \
+            -derivedDataPath ./build \
+            build
+
+      - name: Create DMG
+        run: |
+          # Create DMG using create-dmg (need to install first)
+          brew install create-dmg
+          create-dmg \
+            --volname "AIPluginManager" \
+            --volicon "Resources/Assets.xcassets/AppIcon.appiconset/AppIcon-512.png" \
+            --window-pos 200 120 \
+            --window-size 600 400 \
+            --icon-size 100 \
+            --icon "AIPluginManager.app" 150 185 \
+            --hide-extension "AIPluginManager.app" \
+            --app-drop-link 450 185 \
+            "AIPluginManager-${GITHUB_REF#refs/tags/}.dmg" \
+            "build/Build/Products/Release/AIPluginManager.app"
+
+      - name: Upload Release Asset
+        uses: softprops/action-gh-release@v1
+        with:
+          files: AIPluginManager-*.dmg
+          draft: false
+          prerelease: ${{ contains(github.ref, 'alpha') || contains(github.ref, 'beta') }}
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  build-number:
+    name: Update Build Number
+    runs-on: macos-latest
+    if: github.event_name == 'push'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Generate Build Number
+        id: build
+        run: |
+          BUILD_NUMBER=$(date +%Y%m%d%H%M)
+          echo "build_number=$BUILD_NUMBER" >> $GITHUB_OUTPUT
+          echo "Build Number: $BUILD_NUMBER"
+
+      - name: Comment on PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `✅ Build started! Build Number: ${{ steps.build.outputs.build_number }}`
+            })
