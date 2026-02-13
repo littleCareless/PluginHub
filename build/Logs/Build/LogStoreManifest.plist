@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>12</integer>
+	<key>logs</key>
+	<dict>
+		<key>54B092D1-ADA9-488E-9CB9-79097DC1297D</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>54B092D1-ADA9-488E-9CB9-79097DC1297D.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>AIPluginManager project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>AIPluginManager</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Cleaning project AIPluginManager with scheme AIPluginManager and configuration Release</string>
+			<key>timeStartedRecording</key>
+			<real>792654624.21636796</real>
+			<key>timeStoppedRecording</key>
+			<real>792654624.48879397</real>
+			<key>title</key>
+			<string>Cleaning project AIPluginManager with scheme AIPluginManager and configuration Release</string>
+			<key>uniqueIdentifier</key>
+			<string>54B092D1-ADA9-488E-9CB9-79097DC1297D</string>
+		</dict>
+		<key>8D9B7A77-D7A2-4E59-B806-9158267476D5</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>8D9B7A77-D7A2-4E59-B806-9158267476D5.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>42</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>7</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>AIPluginManager project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>AIPluginManager</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building project AIPluginManager with scheme AIPluginManager and configuration Release</string>
+			<key>timeStartedRecording</key>
+			<real>792654624.49031901</real>
+			<key>timeStoppedRecording</key>
+			<real>792654633.28640401</real>
+			<key>title</key>
+			<string>Building project AIPluginManager with scheme AIPluginManager and configuration Release</string>
+			<key>uniqueIdentifier</key>
+			<string>8D9B7A77-D7A2-4E59-B806-9158267476D5</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

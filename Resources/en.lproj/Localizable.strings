@@ -1,0 +1,79 @@
+/*
+  Localizable.strings (English)
+  AI Plugin Manager
+*/
+
+// MARK: - App Name
+"app.name" = "AI Plugin Manager";
+
+// MARK: - Navigation
+"nav.plugins" = "Plugins";
+"nav.editors" = "Editors";
+"nav.duplicates" = "Duplicates";
+"nav.settings" = "Settings";
+"nav.overview" = "Overview";
+"nav.actions" = "Actions";
+
+// MARK: - Plugin Management
+"plugin.title" = "Plugin Management";
+"plugin.scan" = "Scan Plugins";
+"plugin.scanAll" = "Scan All";
+"plugin.openDir" = "Open Plugin Directory";
+"plugin.editConfig" = "Edit Config";
+"plugin.installed" = "Installed";
+"plugin.version" = "Version";
+"plugin.linked" = "Linked";
+"plugin.noPlugins" = "No Plugins";
+"plugin.noPluginsMessage" = "Click scan button to discover plugins";
+
+// MARK: - Editor Management
+"editor.title" = "Editors";
+"editor.scan" = "Scan Editors";
+"editor.add" = "Add Editor";
+"editor.scanPlugins" = "Scan Plugins";
+"editor.openDir" = "Open Plugin Directory";
+"editor.editConfig" = "Edit Config";
+"editor.remove" = "Remove Editor";
+"editor.disabled" = "Disabled";
+"editor.notScanned" = "Not Scanned";
+"editor.clickToScan" = "Click scan button to discover plugins";
+
+// MARK: - Duplicate Detection
+"duplicate.title" = "Duplicate Detection";
+"duplicate.detect" = "Detect Duplicates";
+"duplicate.detecting" = "Detecting...";
+"duplicate.noDuplicates" = "No Duplicates Found";
+"duplicate.noDuplicatesMessage" = "All plugins are unique";
+"duplicate.report" = "Duplicate Report";
+"duplicate.plugin" = "Plugin";
+"duplicate.count" = "Count";
+"duplicate.locations" = "Locations";
+
+// MARK: - Settings
+"settings.title" = "Settings";
+"settings.general" = "General";
+"settings.language" = "Language";
+"settings.autoScan" = "Auto Scan on Launch";
+"settings.showNotifications" = "Show Notifications";
+
+// MARK: - Common
+"common.scan" = "Scan";
+"common.cancel" = "Cancel";
+"common.save" = "Save";
+"common.delete" = "Delete";
+"common.confirm" = "Confirm";
+"common.error" = "Error";
+"common.success" = "Success";
+"common.loading" = "Loading...";
+"common.yes" = "Yes";
+"common.no" = "No";
+"common.ok" = "OK";
+
+// MARK: - Editor Types
+"editor.type.vscode" = "VS Code";
+"editor.type.vscodeInsiders" = "VS Code Insiders";
+"editor.type.vscodium" = "VSCodium";
+"editor.type.cursor" = "Cursor";
+"editor.type.windsurf" = "Windsurf";
+"editor.type.trae" = "Trae";
+"editor.type.marsCode" = "MarsCode";

@@ -1,0 +1,14 @@
+/Users/zhangning/coding/AIPluginManager/Sources/App/AIPluginManagerApp.swift
+/Users/zhangning/coding/AIPluginManager/Sources/Views/ContentView.swift
+/Users/zhangning/coding/AIPluginManager/Sources/Services/Deduplicator/DeduplicatorService.swift
+/Users/zhangning/coding/AIPluginManager/Sources/Models/DuplicateReport.swift
+/Users/zhangning/coding/AIPluginManager/Sources/Views/DuplicateViews.swift
+/Users/zhangning/coding/AIPluginManager/Sources/Models/Editor.swift
+/Users/zhangning/coding/AIPluginManager/Sources/Views/EditorViews.swift
+/Users/zhangning/coding/AIPluginManager/Sources/Services/LinkManager/LinkManagerService.swift
+/Users/zhangning/coding/AIPluginManager/Sources/Models/Plugin.swift
+/Users/zhangning/coding/AIPluginManager/Sources/Services/PluginDiscovery/PluginDiscoveryService.swift
+/Users/zhangning/coding/AIPluginManager/Sources/Views/PluginListView.swift
+/Users/zhangning/coding/AIPluginManager/Sources/Services/PluginStore/PluginStoreService.swift
+/Users/zhangning/coding/AIPluginManager/Sources/Views/SettingsViews.swift
+/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/DerivedSources/GeneratedAssetSymbols.swift

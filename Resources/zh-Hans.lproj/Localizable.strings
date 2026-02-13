@@ -1,0 +1,79 @@
+/*
+  Localizable.strings (Simplified Chinese)
+  AI Plugin Manager
+*/
+
+// MARK: - 应用名称
+"app.name" = "AI 插件管理器";
+
+// MARK: - 导航
+"nav.plugins" = "插件管理";
+"nav.editors" = "编辑器";
+"nav.duplicates" = "重复检测";
+"nav.settings" = "设置";
+"nav.overview" = "概览";
+"nav.actions" = "操作";
+
+// MARK: - 插件管理
+"plugin.title" = "插件管理";
+"plugin.scan" = "扫描插件";
+"plugin.scanAll" = "扫描所有";
+"plugin.openDir" = "打开插件目录";
+"plugin.editConfig" = "编辑配置";
+"plugin.installed" = "已安装";
+"plugin.version" = "版本";
+"plugin.linked" = "已链接";
+"plugin.noPlugins" = "未扫描";
+"plugin.noPluginsMessage" = "点击扫描按钮来发现插件";
+
+// MARK: - 编辑器管理
+"editor.title" = "编辑器";
+"editor.scan" = "扫描编辑器";
+"editor.add" = "添加编辑器";
+"editor.scanPlugins" = "扫描插件";
+"editor.openDir" = "打开插件目录";
+"editor.editConfig" = "编辑配置";
+"editor.remove" = "移除编辑器";
+"editor.disabled" = "已禁用";
+"editor.notScanned" = "未扫描";
+"editor.clickToScan" = "点击扫描按钮来发现插件";
+
+// MARK: - 重复检测
+"duplicate.title" = "重复检测";
+"duplicate.detect" = "检测重复";
+"duplicate.detecting" = "检测中...";
+"duplicate.noDuplicates" = "未发现重复";
+"duplicate.noDuplicatesMessage" = "所有插件都是唯一的";
+"duplicate.report" = "重复报告";
+"duplicate.plugin" = "插件";
+"duplicate.count" = "数量";
+"duplicate.locations" = "位置";
+
+// MARK: - 设置
+"settings.title" = "设置";
+"settings.general" = "通用";
+"settings.language" = "语言";
+"settings.autoScan" = "启动时自动扫描";
+"settings.showNotifications" = "显示通知";
+
+// MARK: - 通用
+"common.scan" = "扫描";
+"common.cancel" = "取消";
+"common.save" = "保存";
+"common.delete" = "删除";
+"common.confirm" = "确认";
+"common.error" = "错误";
+"common.success" = "成功";
+"common.loading" = "加载中...";
+"common.yes" = "是";
+"common.no" = "否";
+"common.ok" = "确定";
+
+// MARK: - 编辑器类型
+"editor.type.vscode" = "VS Code";
+"editor.type.vscodeInsiders" = "VS Code Insiders";
+"editor.type.vscodium" = "VSCodium";
+"editor.type.cursor" = "Cursor";
+"editor.type.windsurf" = "Windsurf";
+"editor.type.trae" = "Trae";
+"editor.type.marsCode" = "MarsCode";

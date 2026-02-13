@@ -1,0 +1,12 @@
+{
+  "/Users/zhangning/coding/AIPluginManager/Sources/App/AIPluginManagerApp.swift" : {
+    "abi-baseline-json" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/arm64/AIPluginManager.abi.json",
+    "const-values" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/arm64/AIPluginManager-primary.swiftconstvalues",
+    "dependencies" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/arm64/AIPluginManager-primary.d",
+    "diagnostics" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/arm64/AIPluginManager-primary.dia",
+    "objc-header" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/arm64/AIPluginManager-Swift.h",
+    "swiftdoc" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/arm64/AIPluginManager.swiftdoc",
+    "swiftmodule" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/arm64/AIPluginManager.swiftmodule",
+    "swiftsourceinfo" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/arm64/AIPluginManager.swiftsourceinfo"
+  }
+}

@@ -1,0 +1,75 @@
+name: AIPluginManager
+options:
+  bundleIdPrefix: com.zhangning
+  deploymentTarget:
+    macOS: "14.0"
+  xcodeVersion: "15.0"
+  generateEmptyDirectories: true
+
+settings:
+  base:
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_VERSION: "5.9"
+    MACOSX_DEPLOYMENT_TARGET: "14.0"
+    CODE_SIGN_STYLE: Automatic
+    ENABLE_USER_SCRIPT_SANDBOXING: NO
+    CFBundleDevelopmentRegion: en
+    CFBundleAllowMixedLocalizations: YES
+
+targets:
+  AIPluginManager:
+    type: application
+    platform: macOS
+    sources:
+      - path: Sources
+        excludes:
+          - "**/.DS_Store"
+    resources:
+      - path: Resources
+    settings:
+      base:
+        PRODUCT_NAME: AIPluginManager
+        PRODUCT_BUNDLE_IDENTIFIER: com.zhangning.AIPluginManager
+        INFOPLIST_FILE: Resources/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        DEVELOPMENT_TEAM: ""
+        CODE_SIGN_IDENTITY: "-"
+        COMBINE_HIDPI_IMAGES: YES
+    dependencies: []
+    postCompileScripts:
+      - script: |
+          # Build completed successfully
+        name: Build Complete Notification
+
+  AIPluginManagerTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: Tests
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.zhangning.AIPluginManagerTests
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/AIPluginManager.app/Contents/MacOS/AIPluginManager"
+        BUNDLE_LOADER: "$(TEST_HOST)"
+    dependencies:
+      - target: AIPluginManager
+
+schemes:
+  AIPluginManager:
+    build:
+      targets:
+        AIPluginManager: all
+        AIPluginManagerTests: [test]
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - AIPluginManagerTests
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release

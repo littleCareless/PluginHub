@@ -1,0 +1,81 @@
+{
+  "" : {
+    "const-values" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/AIPluginManager-primary.swiftconstvalues",
+    "dependencies" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/AIPluginManager-primary.d",
+    "diagnostics" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/AIPluginManager-primary.dia",
+    "emit-module-dependencies" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/AIPluginManager-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/AIPluginManager-primary-emit-module.dia",
+    "pch" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/AIPluginManager-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/AIPluginManager-primary.swiftdeps"
+  },
+  "/Users/zhangning/coding/AIPluginManager/Sources/App/AIPluginManagerApp.swift" : {
+    "index-unit-output-path" : "/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/AIPluginManagerApp.o",
+    "llvm-bc" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/AIPluginManagerApp.bc",
+    "object" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/AIPluginManagerApp.o"
+  },
+  "/Users/zhangning/coding/AIPluginManager/Sources/Models/DuplicateReport.swift" : {
+    "index-unit-output-path" : "/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/DuplicateReport.o",
+    "llvm-bc" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/DuplicateReport.bc",
+    "object" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/DuplicateReport.o"
+  },
+  "/Users/zhangning/coding/AIPluginManager/Sources/Models/Editor.swift" : {
+    "index-unit-output-path" : "/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/Editor.o",
+    "llvm-bc" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/Editor.bc",
+    "object" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/Editor.o"
+  },
+  "/Users/zhangning/coding/AIPluginManager/Sources/Models/Plugin.swift" : {
+    "index-unit-output-path" : "/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/Plugin.o",
+    "llvm-bc" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/Plugin.bc",
+    "object" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/Plugin.o"
+  },
+  "/Users/zhangning/coding/AIPluginManager/Sources/Services/Deduplicator/DeduplicatorService.swift" : {
+    "index-unit-output-path" : "/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/DeduplicatorService.o",
+    "llvm-bc" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/DeduplicatorService.bc",
+    "object" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/DeduplicatorService.o"
+  },
+  "/Users/zhangning/coding/AIPluginManager/Sources/Services/LinkManager/LinkManagerService.swift" : {
+    "index-unit-output-path" : "/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/LinkManagerService.o",
+    "llvm-bc" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/LinkManagerService.bc",
+    "object" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/LinkManagerService.o"
+  },
+  "/Users/zhangning/coding/AIPluginManager/Sources/Services/PluginDiscovery/PluginDiscoveryService.swift" : {
+    "index-unit-output-path" : "/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/PluginDiscoveryService.o",
+    "llvm-bc" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/PluginDiscoveryService.bc",
+    "object" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/PluginDiscoveryService.o"
+  },
+  "/Users/zhangning/coding/AIPluginManager/Sources/Services/PluginStore/PluginStoreService.swift" : {
+    "index-unit-output-path" : "/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/PluginStoreService.o",
+    "llvm-bc" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/PluginStoreService.bc",
+    "object" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/PluginStoreService.o"
+  },
+  "/Users/zhangning/coding/AIPluginManager/Sources/Views/ContentView.swift" : {
+    "index-unit-output-path" : "/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/ContentView.o",
+    "llvm-bc" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/ContentView.bc",
+    "object" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/ContentView.o"
+  },
+  "/Users/zhangning/coding/AIPluginManager/Sources/Views/DuplicateViews.swift" : {
+    "index-unit-output-path" : "/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/DuplicateViews.o",
+    "llvm-bc" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/DuplicateViews.bc",
+    "object" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/DuplicateViews.o"
+  },
+  "/Users/zhangning/coding/AIPluginManager/Sources/Views/EditorViews.swift" : {
+    "index-unit-output-path" : "/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/EditorViews.o",
+    "llvm-bc" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/EditorViews.bc",
+    "object" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/EditorViews.o"
+  },
+  "/Users/zhangning/coding/AIPluginManager/Sources/Views/PluginListView.swift" : {
+    "index-unit-output-path" : "/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/PluginListView.o",
+    "llvm-bc" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/PluginListView.bc",
+    "object" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/PluginListView.o"
+  },
+  "/Users/zhangning/coding/AIPluginManager/Sources/Views/SettingsViews.swift" : {
+    "index-unit-output-path" : "/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/SettingsViews.o",
+    "llvm-bc" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/SettingsViews.bc",
+    "object" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/SettingsViews.o"
+  },
+  "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "index-unit-output-path" : "/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/zhangning/coding/AIPluginManager/build/Build/Intermediates.noindex/AIPluginManager.build/Release/AIPluginManager.build/Objects-normal/x86_64/GeneratedAssetSymbols.o"
+  }
+}
